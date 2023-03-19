@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://Cloud:Cloud@cluster0.wxc5ng3.mongodb.net/?retryWrites=true&w=majority",
+    "secretOrKey": "logincloud"
+}
