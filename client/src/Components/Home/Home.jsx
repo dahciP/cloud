@@ -14,8 +14,8 @@ class Home extends Component {
               <div className="banner-left">
                 <h1 className="text-capitalize">
                   Welcome to
-                  <span className="text-uppercase"> mern </span>
-                  stack Application
+                  <span className="text-uppercase"> cloud </span>
+                  hosting Application
                 </h1>
                 <div className="buttons">
                   <Link

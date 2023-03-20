@@ -4,6 +4,9 @@ const passport = require("passport");
 const usersRouter = require("./routes/api/users");
 const config = require('config');
 const app = express();
+const path = require('path');
+app.use('/static', express.static('static'));
+app.use(express.static(path.join(__dirname, "build")));
 // Body parser middleware
 app.use(
     express.urlencoded({
@@ -23,6 +26,9 @@ mongoose
     )
     .then(() => console.log("MongoDB successfully connected"))
     .catch(err => console.log(err));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "build", "index.html"));
+    })
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
@@ -42,3 +48,6 @@ if (process.env.NODE_ENV = "production") {
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+
+
+
